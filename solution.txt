@@ -1,0 +1,67 @@
+Object Destructuring 1:
+let facts = {numPlanets: 8, yearNeptuneDiscovered: 1846};
+let {numPlanets, yearNeptuneDiscovered} = facts;
+console.log(numPlanets); // ?
+console.log(yearNeptuneDiscovered); // ?
+The above code will print: 
+    8
+    1846
+
+Object Destructuring 2: 
+let planetFacts = {
+  numPlanets: 8,
+  yearNeptuneDiscovered: 1846,
+  yearMarsDiscovered: 1659
+};
+let {numPlanets, ...discoveryYears} = planetFacts;
+console.log(discoveryYears);
+The above code will print: 
+    {
+        yearNeptuneDiscovered: 1846,
+        yearMarsDiscovered: 1659
+    }
+
+Object Destructuring 3:
+function getUserData({firstName, favoriteColor="green"}){
+  return `Your name is ${firstName} and you like ${favoriteColor}`;
+}
+getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // ?
+getUserData({firstName: "Melissa"}) // ?
+getUserData({}) // ?
+The above code will print: 
+    "Your name is Alejandro and you like purple"
+    "Your name is Melissa and you like green"
+    "Your name is undefined and you like green"
+
+Array Destructuring 1:
+let [first, second, third] = ["Maya", "Marisa", "Chi"];
+console.log(first); // ?
+console.log(second); // ?
+console.log(third); // ?
+The above code will print:
+    "Maya"
+    "Marisa"
+    "Chi"
+
+Array Destructuring 2
+let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
+  "Raindrops on roses",
+  "whiskers on kittens",
+  "Bright copper kettles",
+  "warm woolen mittens",
+  "Brown paper packages tied up with strings"
+]
+console.log(raindrops); // ?
+console.log(whiskers); // ?
+console.log(aFewOfMyFavoriteThings); // ?
+The above code will print:
+    "Raindrops on roses"
+    "whiskers on kittens"
+    ["Bright copper kettles", "warm woolen mittens", "Brown paper packages tied up with strings"]
+
+Array Destructuring 3
+let numbers = [10, 20, 30];
+[numbers[1], numbers[2]] = [numbers[2], numbers[1]]
+console.log(numbers) // ?
+The above code will print:
+    [10, 30, 20]
